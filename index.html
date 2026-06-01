@@ -481,9 +481,17 @@ body.mobile-app .search-bar{position:sticky;top:58px;z-index:20;background:var(-
 body.mobile-app .search-input{min-height:44px;border-radius:15px;font-size:16px}
 @media(min-width:700px){body.mobile-app:before{content:'Vista celular';position:fixed;left:50%;top:10px;transform:translateX(-50%) translateX(-270px);font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3)}}
 
+
+/* Botón permanente para salir de vista celular */
+.mobile-exit-btn{display:none}
+body.mobile-app .mobile-exit-btn{display:flex;position:fixed;right:12px;top:12px;z-index:500;align-items:center;gap:6px;padding:8px 11px;border-radius:999px;border:1px solid var(--border);background:rgba(26,26,31,.94);color:var(--text);font-size:12px;font-weight:700;box-shadow:0 12px 34px rgba(0,0,0,.45);backdrop-filter:blur(14px);cursor:pointer}
+body.mobile-app .mobile-exit-btn:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:520px){body.mobile-app .mobile-exit-btn{top:auto;bottom:78px;right:14px}}
+
 </style>
 </head>
 <body>
+<button class="mobile-exit-btn" id="mobileExitBtn" onclick="setDesktopMode()">💻 Escritorio</button>
 
 <!-- AUTH -->
 <div id="authScreen">
@@ -779,20 +787,34 @@ let goals=[];
 
 function getRedirectUri(){return window.location.href.split('#')[0];}
 function cv(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
-function isMobileMode(){return localStorage.getItem('mf_view_mode')==='mobile'||window.location.hash==='#celular';}
+function isMobileMode(){
+  // #escritorio fuerza la vista normal aunque haya quedado guardada la vista celular
+  if(window.location.hash==='#escritorio')return false;
+  if(window.location.hash==='#celular')return true;
+  return localStorage.getItem('mf_view_mode')==='mobile';
+}
 function applyViewMode(){
   const mobile=isMobileMode();
   document.body.classList.toggle('mobile-app',mobile);
   const btn=document.getElementById('viewModeBtn');
   if(btn)btn.textContent=mobile?'💻 Vista escritorio':'📱 Vista celular';
 }
-function toggleMobileMode(){
-  const next=!document.body.classList.contains('mobile-app');
-  localStorage.setItem('mf_view_mode',next?'mobile':'desktop');
-  if(next){history.replaceState(null,'',getRedirectUri()+'#celular');}
-  else{history.replaceState(null,'',getRedirectUri()+'#escritorio');}
+function setDesktopMode(){
+  localStorage.setItem('mf_view_mode','desktop');
+  history.replaceState(null,'',getRedirectUri()+'#escritorio');
   applyViewMode();
   setTimeout(()=>window.scrollTo({top:0,behavior:'smooth'}),30);
+}
+function setMobileMode(){
+  localStorage.setItem('mf_view_mode','mobile');
+  history.replaceState(null,'',getRedirectUri()+'#celular');
+  applyViewMode();
+  setTimeout(()=>window.scrollTo({top:0,behavior:'smooth'}),30);
+}
+function toggleMobileMode(){
+  const next=!document.body.classList.contains('mobile-app');
+  if(next)setMobileMode();
+  else setDesktopMode();
 }
 window.addEventListener('hashchange',applyViewMode);
 
@@ -812,7 +834,7 @@ window.onload=function(){
       accessToken=token;
       localStorage.setItem('mf_token',token);
       localStorage.setItem('mf_token_exp',String(Date.now()+exp*1000));
-      history.replaceState(null,'',getRedirectUri()+(localStorage.getItem('mf_view_mode')==='mobile'?'#celular':''));
+      history.replaceState(null,'',getRedirectUri()+(localStorage.getItem('mf_view_mode')==='mobile'?'#celular':'#escritorio'));
       applyViewMode();
       initApp();
       return;
