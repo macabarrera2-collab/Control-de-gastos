@@ -394,6 +394,93 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .fg-label{font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-right:3px}
 .filter-sep{width:1px;height:18px;background:var(--border);display:inline-block}
 @media(max-width:600px){.filter-sep{display:none}.filters-wrap{gap:8px 14px}.list-hdr{flex-direction:column;align-items:flex-start}}
+
+
+/* ── MODO CELULAR OPCIONAL ── */
+.btn-mobile-view{font-size:12px;color:var(--blue);background:var(--blue-dim);border:1px solid #284a7a;cursor:pointer;padding:5px 10px;border-radius:6px;font-weight:600;white-space:nowrap}
+.btn-mobile-view:hover{background:#22385e;color:#cfe2ff}
+body.mobile-app{background:#070708}
+body.mobile-app #app{max-width:460px;margin:0 auto;background:var(--bg);box-shadow:0 0 0 1px rgba(255,255,255,.04),0 24px 80px rgba(0,0,0,.55);min-height:100vh;position:relative;overflow:hidden}
+body.mobile-app .topnav{padding:.72rem .85rem;align-items:center;gap:8px;position:sticky;top:0;border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(14px);background:rgba(15,15,17,.92)}
+body.mobile-app .topnav-left{min-width:0;gap:0}
+body.mobile-app .nav-logo{font-size:11px;letter-spacing:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:120px}
+body.mobile-app .topnav-right{margin-left:auto;gap:6px}
+body.mobile-app .btn-excel,body.mobile-app .btn-cats,body.mobile-app .user-dot{display:none}
+body.mobile-app .btn-out{font-size:11px;padding:4px 6px}
+body.mobile-app .btn-mobile-view{font-size:11px;padding:6px 9px;border-radius:999px}
+body.mobile-app .nav-tabs{position:fixed;left:50%;bottom:10px;transform:translateX(-50%);z-index:170;width:min(430px,calc(100vw - 20px));display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:5px;background:rgba(26,26,31,.94);border:1px solid var(--border);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.55);backdrop-filter:blur(14px)}
+body.mobile-app .nav-tab{padding:10px 5px;font-size:11px;border-radius:13px;text-align:center}
+body.mobile-app .main{max-width:100%;padding:.85rem .72rem 5.8rem}
+body.mobile-app .app-hero{display:block;padding:1rem;border-radius:22px;margin-bottom:10px;background:linear-gradient(145deg,rgba(245,197,66,.18),rgba(91,156,246,.08));border-color:rgba(255,255,255,.08)}
+body.mobile-app .hero-kicker{font-size:9px;margin-bottom:7px}
+body.mobile-app .hero-row{display:block}
+body.mobile-app .hero-title{font-size:25px;margin-bottom:10px;letter-spacing:-.7px}
+body.mobile-app .hero-month{display:grid;grid-template-columns:34px 1fr 34px;width:100%;padding:5px;border-radius:16px;background:rgba(0,0,0,.25)}
+body.mobile-app .mlabel{text-align:center;min-width:0;font-size:12px;align-self:center}
+body.mobile-app .mbtn{width:34px;height:32px;border-radius:12px}
+body.mobile-app .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;width:100%}
+body.mobile-app .hero-actions .btn-primary{grid-column:1/-1}
+body.mobile-app .btn-primary,body.mobile-app .btn-secondary,body.mobile-app .btn-quick-launch{width:100%;padding:12px 10px;border-radius:15px;font-size:13px;min-height:44px}
+body.mobile-app .summary-blocks{display:flex;gap:9px;overflow-x:auto;margin:0 -.72rem 12px;padding:0 .72rem 4px;scroll-snap-type:x mandatory}
+body.mobile-app .summary-blocks::-webkit-scrollbar{display:none}
+body.mobile-app .summary-blocks .sb,body.mobile-app .summary-blocks .budget-card{min-width:78%;scroll-snap-align:start;border-radius:22px;min-height:138px;padding:1rem}
+body.mobile-app .sb-head{margin-bottom:12px;font-size:9px}
+body.mobile-app .sb-val.big{font-size:24px}
+body.mobile-app .sb-spark{width:58px}
+body.mobile-app .budget-controls{width:100%;display:grid;grid-template-columns:76px 1fr;margin-top:2px}
+body.mobile-app .budget-input{width:100%}
+body.mobile-app .insights{grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+body.mobile-app .ins{border-radius:18px;padding:.82rem .85rem;min-height:92px}
+body.mobile-app .ins-label{font-size:8px;letter-spacing:1px}
+body.mobile-app .ins-val{font-size:15px;white-space:normal;line-height:1.15}
+body.mobile-app .ins-sub{font-size:10px}
+body.mobile-app .dash-grid{grid-template-columns:1fr;gap:10px;margin-bottom:12px}
+body.mobile-app .dash-col{gap:10px}
+body.mobile-app .dash-card{border-radius:22px;padding:1rem}
+body.mobile-app .dash-card-title{font-size:9px;margin-bottom:12px}
+body.mobile-app .donut-wrap{display:block;text-align:center}
+body.mobile-app .donut-svg{margin:0 auto 10px;display:block}
+body.mobile-app .donut-legend{gap:8px;text-align:left}
+body.mobile-app .bar-row{margin-bottom:16px}
+body.mobile-app .bar-row-label,body.mobile-app .bar-row-amt{font-size:11px}
+body.mobile-app .list-hdr{position:relative;top:auto;background:transparent;backdrop-filter:none;padding:3px 0 7px;margin-bottom:7px;display:block}
+body.mobile-app .list-title{display:block;margin-bottom:8px;font-size:9px}
+body.mobile-app .filters-wrap{display:flex;overflow-x:auto;flex-wrap:nowrap;gap:8px;margin:0 -.72rem;padding:0 .72rem 4px}
+body.mobile-app .filters-wrap::-webkit-scrollbar{display:none}
+body.mobile-app .filter-group{flex:0 0 auto;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:4px}
+body.mobile-app .fg-label,body.mobile-app .filter-sep{display:none}
+body.mobile-app .chip{font-size:11px;padding:6px 10px;border-radius:999px;white-space:nowrap;border:none;background:transparent}
+body.mobile-app #filterPago{width:100%;padding:9px 12px;border-radius:14px;background:var(--surface);font-size:12px}
+body.mobile-app .item{border-radius:18px;padding:.8rem .85rem;margin-bottom:8px;align-items:center;gap:9px}
+body.mobile-app .item-icon{width:40px;height:40px;border-radius:14px;font-size:18px}
+body.mobile-app .item-desc{font-size:14px;white-space:normal;line-height:1.18;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+body.mobile-app .item-meta{font-size:10px}
+body.mobile-app .item-pills{gap:3px}
+body.mobile-app .ipill{font-size:9px;padding:2px 6px}
+body.mobile-app .item-right{min-width:92px;gap:5px}
+body.mobile-app .item-amt{font-size:13px;text-align:right;line-height:1.15}
+body.mobile-app .item-btn{font-size:15px;padding:4px 7px;background:var(--surface2);border-radius:8px}
+body.mobile-app .syncbar{text-align:center;font-size:10px;margin:8px 0}
+body.mobile-app .fab-add{right:18px;bottom:78px;width:56px;height:56px;z-index:165}
+body.mobile-app .entry-modal,body.mobile-app .modal-overlay{align-items:flex-end;padding:0;background:rgba(0,0,0,.68)}
+body.mobile-app .entry-panel,body.mobile-app .quick-modal-panel,body.mobile-app .modal-box{width:100%;max-width:460px;max-height:88vh;border-radius:24px 24px 0 0;overflow:auto}
+body.mobile-app .entry-panel .form-card,body.mobile-app .quick-modal-panel .quick-card,body.mobile-app .modal-box{border-radius:24px 24px 0 0;border-left:none;border-right:none;border-bottom:none;padding:1rem}
+body.mobile-app .fg4,body.mobile-app .fg3,body.mobile-app .fg2{grid-template-columns:1fr;gap:9px}
+body.mobile-app .field input,body.mobile-app .field select{min-height:43px;font-size:16px}
+body.mobile-app .form-actions,body.mobile-app .quick-bottom{display:grid;grid-template-columns:1fr;gap:8px}
+body.mobile-app .btn-add,body.mobile-app .btn-add-another,body.mobile-app .btn-cancel,body.mobile-app .btn-quick,body.mobile-app .btn-quick-another{width:100%;min-height:44px;border-radius:13px}
+body.mobile-app .quick-amount-row{display:grid;grid-template-columns:1fr auto}
+body.mobile-app .quick-amount-row input{font-size:26px;min-height:52px}
+body.mobile-app .quick-cats{max-height:132px;overflow:auto;padding-bottom:2px}
+body.mobile-app .qcat{font-size:12px;padding:7px 10px}
+body.mobile-app .annual-card,body.mobile-app .goal-form-card,body.mobile-app .goal-card{border-radius:22px}
+body.mobile-app .amonth-row{display:block;border-radius:16px;padding:.8rem .9rem}
+body.mobile-app .amonth-vals{margin-top:7px;display:grid;grid-template-columns:1fr;gap:4px;font-size:11px}
+body.mobile-app .savings-grid{grid-template-columns:1fr;gap:10px}
+body.mobile-app .search-bar{position:sticky;top:58px;z-index:20;background:var(--bg);padding:4px 0 8px}
+body.mobile-app .search-input{min-height:44px;border-radius:15px;font-size:16px}
+@media(min-width:700px){body.mobile-app:before{content:'Vista celular';position:fixed;left:50%;top:10px;transform:translateX(-50%) translateX(-270px);font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3)}}
+
 </style>
 </head>
 <body>
@@ -436,6 +523,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
       </div>
     </div>
     <div class="topnav-right">
+      <button class="btn-mobile-view" id="viewModeBtn" onclick="toggleMobileMode()">📱 Vista celular</button>
       <button class="btn-excel" onclick="exportExcel()">↓ Excel</button>
       <button class="btn-cats" onclick="openCatModal()">⚙ Categorías</button>
       <div class="user-dot" id="userDot">M</div>
@@ -691,8 +779,25 @@ let goals=[];
 
 function getRedirectUri(){return window.location.href.split('#')[0];}
 function cv(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim();}
+function isMobileMode(){return localStorage.getItem('mf_view_mode')==='mobile'||window.location.hash==='#celular';}
+function applyViewMode(){
+  const mobile=isMobileMode();
+  document.body.classList.toggle('mobile-app',mobile);
+  const btn=document.getElementById('viewModeBtn');
+  if(btn)btn.textContent=mobile?'💻 Vista escritorio':'📱 Vista celular';
+}
+function toggleMobileMode(){
+  const next=!document.body.classList.contains('mobile-app');
+  localStorage.setItem('mf_view_mode',next?'mobile':'desktop');
+  if(next){history.replaceState(null,'',getRedirectUri()+'#celular');}
+  else{history.replaceState(null,'',getRedirectUri()+'#escritorio');}
+  applyViewMode();
+  setTimeout(()=>window.scrollTo({top:0,behavior:'smooth'}),30);
+}
+window.addEventListener('hashchange',applyViewMode);
 
 window.onload=function(){
+  applyViewMode();
   document.getElementById('redirectUriDisplay').textContent=getRedirectUri();
   if(CLIENT_ID){
     document.getElementById('cidInput').value=CLIENT_ID;
@@ -707,7 +812,8 @@ window.onload=function(){
       accessToken=token;
       localStorage.setItem('mf_token',token);
       localStorage.setItem('mf_token_exp',String(Date.now()+exp*1000));
-      history.replaceState(null,'',getRedirectUri());
+      history.replaceState(null,'',getRedirectUri()+(localStorage.getItem('mf_view_mode')==='mobile'?'#celular':''));
+      applyViewMode();
       initApp();
       return;
     }
