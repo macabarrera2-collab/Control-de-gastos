@@ -282,6 +282,47 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 .search-input:focus{outline:none;border-color:var(--accent)}
 .search-x{background:none;border:none;cursor:pointer;color:var(--text3);font-size:20px;padding:0 4px}
 
+
+/* ── LAYOUT 2026 ── */
+.main{max-width:1180px;padding:1.25rem 1rem 6rem}
+.app-hero{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;margin-bottom:14px;padding:1.15rem 1.25rem;background:linear-gradient(135deg,rgba(245,197,66,.12),rgba(91,156,246,.08));border:1px solid var(--border);border-radius:20px}
+.hero-kicker{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
+.hero-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hero-title{font-size:30px;line-height:1;font-weight:400;letter-spacing:-1px;color:var(--text)}
+.hero-month{display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.18);border:1px solid var(--border);border-radius:12px;padding:5px}
+.hero-actions{display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 15px;border:none;border-radius:12px;background:var(--accent);color:#000;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 10px 28px rgba(245,197,66,.16)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:var(--surface2);color:var(--text);font-size:14px;font-weight:600;cursor:pointer}
+.btn-secondary:hover{background:var(--surface3)}
+.btn-quick-launch{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border:1px solid rgba(245,197,66,.28);border-radius:12px;background:rgba(245,197,66,.10);color:var(--accent);font-size:14px;font-weight:700;cursor:pointer}
+.btn-quick-launch:hover{background:rgba(245,197,66,.16);transform:translateY(-1px)}
+.summary-blocks{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:stretch}
+.sb{padding:1rem;border-radius:18px;min-height:126px}
+.sb-head{margin-bottom:14px}
+.sb-val.big{font-size:22px}.sb-row{gap:8px}.sb-lbl{white-space:nowrap}
+.budget-card,.quick-card,.dash-card,.annual-card,.goal-form-card,.goal-card,.item{border-radius:18px}
+.summary-blocks .budget-card{margin-bottom:0;min-height:126px;display:flex;flex-direction:column;justify-content:space-between}
+.summary-blocks .budget-top{margin-bottom:12px}
+.summary-blocks .budget-controls{gap:8px}
+.summary-blocks .budget-input{width:120px}
+.quick-modal-panel{width:min(760px,100%);max-height:92vh;overflow:auto}.quick-modal-panel .quick-card{margin:0;box-shadow:0 22px 80px rgba(0,0,0,.45)}
+.dash-grid{grid-template-columns:minmax(320px,.9fr) minmax(420px,1.1fr);gap:14px}
+.quick-card{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--surface),rgba(245,197,66,.04));padding:1.1rem}
+.quick-title{display:flex;align-items:center;justify-content:space-between}
+.quick-title:after{content:'carga express';font-family:var(--sans);font-size:11px;letter-spacing:0;text-transform:none;color:var(--accent);background:var(--accent-dim);padding:3px 8px;border-radius:999px}
+.quick-bottom{align-items:stretch}.quick-bottom select{height:auto}.btn-quick{min-width:120px}
+.item{padding:.85rem 1rem}.item-icon{width:38px;height:38px;border-radius:12px}.item-desc{font-size:15px}.item-right{gap:6px}.item-amt{font-size:15px}
+.list-hdr{position:sticky;top:62px;z-index:35;background:rgba(15,15,17,.92);backdrop-filter:blur(12px);padding:10px 0;margin-bottom:6px}
+.entry-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.68);z-index:220;align-items:center;justify-content:center;padding:1rem}
+.entry-modal.open{display:flex}.entry-panel{width:min(820px,100%);max-height:92vh;overflow:auto}.entry-panel .form-card{margin:0;box-shadow:0 22px 80px rgba(0,0,0,.45)}
+.form-title{display:flex;align-items:center;justify-content:space-between;font-size:12px}
+.form-close{background:var(--surface2);border:1px solid var(--border);color:var(--text2);border-radius:10px;width:32px;height:32px;font-size:20px;cursor:pointer;line-height:1}.form-close:hover{color:var(--red);border-color:var(--red-dim)}
+.fab-add{position:fixed;right:22px;bottom:22px;z-index:180;width:58px;height:58px;border-radius:50%;border:none;background:var(--accent);color:#000;font-size:28px;font-weight:300;cursor:pointer;box-shadow:0 18px 40px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08)}
+.fab-add:hover{transform:translateY(-2px)}
+@media(max-width:900px){.summary-blocks{grid-template-columns:1fr 1fr}.dash-grid{grid-template-columns:1fr}.app-hero{grid-template-columns:1fr}.hero-actions{justify-content:flex-start}.topnav{overflow-x:auto}.nav-tabs{min-width:max-content}.topnav-right{min-width:max-content}}
+@media(max-width:600px){.main{padding:.8rem .75rem 5.5rem}.app-hero{padding:1rem;border-radius:18px}.hero-title{font-size:24px}.hero-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}.btn-primary,.btn-secondary,.btn-quick-launch{width:100%}.btn-quick-launch{grid-column:1/-1}.summary-blocks{grid-template-columns:1fr}.quick-bottom{flex-direction:column}.fg4,.fg3,.fg2{grid-template-columns:1fr}.list-hdr{top:54px}.fab-add{right:16px;bottom:16px;width:54px;height:54px}.entry-modal{padding:.5rem}.entry-panel{max-height:96vh}}
+
 @media(max-width:600px){
   .summary-cards{grid-template-columns:1fr 1fr}
   .summary-cards .scard:last-child{grid-column:1/-1}
@@ -325,7 +366,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 <div id="app">
   <nav class="topnav">
     <div class="topnav-left">
-      <span class="nav-logo">● finanzas</span>
+      <span class="nav-logo">● finanzas · preview</span>
       <div class="nav-tabs">
         <button class="nav-tab active" onclick="switchTab('mes',this)">Este mes</button>
         <button class="nav-tab" onclick="switchTab('anual',this)">Anual</button>
@@ -345,11 +386,24 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 
     <!-- TAB MES -->
     <div id="tabMes">
-      <div class="period-bar">
-        <button class="mbtn" onclick="changeMonth(-1)">‹</button>
-        <span class="mlabel" id="monthLabel"></span>
-        <button class="mbtn" onclick="changeMonth(1)">›</button>
-      </div>
+      <section class="app-hero">
+        <div>
+          <div class="hero-kicker">Resumen mensual</div>
+          <div class="hero-row">
+            <h1 class="hero-title">Mis finanzas</h1>
+            <div class="hero-month">
+              <button class="mbtn" onclick="changeMonth(-1)" title="Mes anterior">‹</button>
+              <span class="mlabel" id="monthLabel"></span>
+              <button class="mbtn" onclick="changeMonth(1)" title="Mes siguiente">›</button>
+            </div>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="openExpenseModal('gasto')">+ Nuevo gasto</button>
+          <button class="btn-quick-launch" onclick="openQuickModal()">⚡ Gasto rápido</button>
+          <button class="btn-secondary" onclick="openExpenseModal('ingreso')">+ Nuevo ingreso</button>
+        </div>
+      </section>
 
       <div class="summary-blocks">
         <div class="sb">
@@ -366,9 +420,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
           <hr class="sb-div">
           <div class="sb-row"><span class="sb-lbl">Balance</span><span class="sb-val big" id="usdBal">US$0</span></div>
         </div>
-      </div>
-
-      <div class="budget-card">
+        <div class="budget-card">
         <div class="budget-top">
           <span class="budget-lbl">Presupuesto mensual</span>
           <div class="budget-controls">
@@ -378,6 +430,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
         </div>
         <div class="bbar-wrap"><div class="bbar-fill" id="budgetFill" style="width:0%"></div></div>
         <div class="budget-info" id="budgetInfo">Ingresá un monto para activar el presupuesto</div>
+        </div>
       </div>
 
       <div class="dash-grid">
@@ -405,8 +458,10 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
       </div>
 
       <!-- Quick add -->
+      <div class="entry-modal" id="quickModal" onclick="if(event.target===this)closeQuickModal()">
+        <div class="quick-modal-panel">
       <div class="quick-card">
-        <div class="quick-title">Gasto rápido</div>
+        <div class="quick-title"><span>Gasto rápido</span><button class="form-close" onclick="closeQuickModal()">×</button></div>
         <div class="quick-amount-row">
           <input type="number" id="qMonto" placeholder="0" inputmode="decimal"/>
           <div class="cur-toggle">
@@ -425,10 +480,14 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
           <button class="btn-quick" id="btnQuick" onclick="quickAdd()">+ Agregar</button>
         </div>
       </div>
+        </div>
+      </div>
 
       <!-- Full form -->
+      <div class="entry-modal" id="expenseModal" onclick="if(event.target===this)closeExpenseModal()">
+        <div class="entry-panel">
       <div class="form-card">
-        <div class="form-title" id="formTitle">Agregar movimiento</div>
+        <div class="form-title"><span id="formTitle">Agregar movimiento</span><button class="form-close" onclick="closeExpenseModal()">×</button></div>
         <input type="hidden" id="editId"/>
         <div class="fg4">
           <div class="field"><label>Descripción</label><input type="text" id="fDesc" placeholder="Ej: Supermercado"/></div>
@@ -451,6 +510,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
         <div class="form-actions">
           <button class="btn-add" id="btnAdd" onclick="saveItem()">+ Agregar</button>
           <button class="btn-cancel" id="btnCancel" onclick="cancelEdit()" style="display:none">Cancelar</button>
+        </div>
+      </div>
         </div>
       </div>
 
@@ -644,6 +705,8 @@ function switchTab(tab,el){
 }
 
 // ── QUICK ──
+function openQuickModal(){const modal=document.getElementById('quickModal');if(!modal)return;modal.classList.add('open');setTimeout(()=>document.getElementById('qMonto').focus(),80);}
+function closeQuickModal(){const modal=document.getElementById('quickModal');if(modal)modal.classList.remove('open');}
 function buildQuickCats(){const wrap=document.getElementById('quickCats');if(!wrap)return;wrap.innerHTML=Object.entries(allCats()).map(([cat,icon])=>`<div class="qcat${cat===qCat?' active':''}" onclick="setQCat('${cat}',this)">${icon} ${cat}</div>`).join('');}
 function setQCur(cur){qCur=cur;document.getElementById('qCurARS').classList.toggle('active',cur==='ARS');document.getElementById('qCurUSD').classList.toggle('active',cur==='USD');}
 function setQCat(cat,el){qCat=cat;document.querySelectorAll('.qcat').forEach(c=>c.classList.remove('active'));el.classList.add('active');}
@@ -656,7 +719,7 @@ async function quickAdd(){
   items.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2),desc,monto,tipo:'gasto',cat:qCat,fecha,moneda:qCur,tags:[],fijoVar:'variable',pago,persona:'yo'});
   const[y,m]=fecha.split('-').map(Number);viewYear=y;viewMonth=m-1;
   document.getElementById('qMonto').value='';document.getElementById('qDesc').value='';
-  render();scheduleSave();document.getElementById('btnQuick').disabled=false;
+  render();scheduleSave();document.getElementById('btnQuick').disabled=false;closeQuickModal();
 }
 
 // ── BUDGET ──
@@ -909,6 +972,28 @@ function renderItem(i){
   </div>`;
 }
 
+
+// ── EXPENSE MODAL ──
+function openExpenseModal(tipo='gasto'){
+  const modal=document.getElementById('expenseModal');
+  if(!modal)return;
+  if(!document.getElementById('editId').value){
+    document.getElementById('fTipo').value=tipo;
+    document.getElementById('fFecha').value=new Date().toISOString().split('T')[0];
+    document.getElementById('fFijoVar').value=tipo==='gasto'?'variable':'';
+    document.getElementById('formTitle').textContent=tipo==='ingreso'?'Nuevo ingreso':'Nuevo gasto';
+    document.getElementById('btnAdd').textContent=tipo==='ingreso'?'+ Agregar ingreso':'+ Agregar gasto';
+  }
+  modal.classList.add('open');
+  setTimeout(()=>document.getElementById('fDesc').focus(),80);
+}
+function closeExpenseModal(){
+  const modal=document.getElementById('expenseModal');
+  if(modal)modal.classList.remove('open');
+  if(document.getElementById('editId').value)cancelEdit();
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeExpenseModal();closeQuickModal();closeCatModal();}});
+
 // ── CRUD ──
 async function saveItem(){
   const desc=document.getElementById('fDesc').value.trim();
@@ -941,7 +1026,7 @@ async function saveItem(){
       const cuotaDesc=cuotas>1?`${desc} (${c+1}/${cuotas})`:desc;
       items.push({
         id:Date.now().toString(36)+Math.random().toString(36).slice(2)+(c>0?c:''),
-        desc:cuotaDesc,monto:montoCuota,tipo,cat,fecha:cuotaFecha,moneda,fijoVar:'fijo',pago,persona,
+        desc:cuotaDesc,monto:montoCuota,tipo,cat,fecha:cuotaFecha,moneda,fijoVar:fijoVar||(cuotas>1?'fijo':'variable'),pago,persona,
         tags:[],groupId
       });
     }
@@ -950,7 +1035,7 @@ async function saveItem(){
     document.getElementById('fMonto').value='';
     document.getElementById('fCuotas').value='1';
   }
-  render();scheduleSave();document.getElementById('btnAdd').disabled=false;
+  render();scheduleSave();document.getElementById('btnAdd').disabled=false;closeExpenseModal();
 }
 
 function editItem(id){
@@ -969,7 +1054,8 @@ function editItem(id){
   document.getElementById('formTitle').textContent='Editar movimiento';
   document.getElementById('btnAdd').textContent='Guardar cambios';
   document.getElementById('btnCancel').style.display='block';
-  document.querySelector('.form-card').scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('expenseModal').classList.add('open');
+  setTimeout(()=>document.getElementById('fDesc').focus(),80);
 }
 
 function cancelEdit(){
@@ -1122,6 +1208,8 @@ function rebuildCatSelects(){
   buildQuickCats();
 }
 </script>
+
+<button class="fab-add" onclick="openExpenseModal('gasto')" title="Nuevo gasto">+</button>
 
 <div class="chart-tooltip" id="chartTooltip">
   <div class="tt-title" id="ttTitle"></div>
